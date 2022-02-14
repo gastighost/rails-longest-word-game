@@ -1,0 +1,11 @@
+<h1>Result</h1>
+
+<% if @is_letters && @is_english %>
+<p>Congratulations! <%= @answer.upcase %> is a valid word!</p>
+<% elsif @is_letters && !@is_english %>
+<p>Sorry but <%= @answer.upcase %> may be in the letter array but is not an English word.</p>
+<% elsif !@is_letters && @is_english %>
+<p>Sorry but <%= @answer.upcase %> may be an English word but it is not in the letter array.</p>
+<% else %>
+<p><%= @answer.upcase %> is neither in the letter array nor is it an English word.</p>
+<% end %>
